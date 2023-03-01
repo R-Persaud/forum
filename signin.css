@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Get rid of all default margins/paddings. Set typeface */
+body {
+    box-sizing: border-box;
+    font-family: "lato", sans-serif;
+    background-color: #134555;
+  }
+  
+  .signupform {
+    display: flex;
+    /*justify-content: right;*/
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  
+  .form {
+    background-color: white;
+    width: 400px;
+    /*height: 567px;*/
+    margin-top: 26px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+.already{
+  font-family: "lato";
+  text-align: center;
+text-decoration: none;
+}
+  .inputContainer {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 13px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  
+  
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  
+  ::placeholder {
+    color: transparent;
+  }
+
+  .submitBtn {
+  display: block;
+ 
+  padding: 15px 30px;
+  border: none;
+  background-color: #176060;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+ 
+}
+.submitBtn:hover
+{
+	background-color: #2f6f84;
+  transform: translateY(-2px);
+}
+
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #134555;
+}
+
+.input:not(:placeholder-shown)+ .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input:focus {
+  border: 2px solid #134555;
+}
+
+
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    margin-bottom:-7px; /*Fix for  gap*/
+    min-height:100px;
+    max-height:135px;
+  }
+ 
+  
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+

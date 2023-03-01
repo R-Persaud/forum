@@ -1,0 +1,15 @@
+CREATE DATABASE Forum;
+
+CREATE TABLE Permission (PermissionID INTEGER PRIMARY KEY, Role VARCHAR(50), PermissionList TEXT);
+
+CREATE TABLE Classes (ClassID INTEGER PRIMARY KEY, ClassTitle Varchar(50), Description TEXT, QtyOfTopics integer NOT NULL);
+
+CREATE TABLE Users (Username VARCHAR(50) PRIMARY KEY, password VARCHAR(50), email VARCHAR(50), PermissionID INTEGER REFERENCES Permission, ClassID INTEGER REFERENCES Classes);
+
+ CREATE TABLE Topics (TopicID INTEGER PRIMARY KEY, ClassID INTEGER REFERENCES Classes, Title VARCHAR(50), Description TEXT, QtyOfPosts INTEGER);
+
+CREATE TABLE Posts (TicketID INTEGER PRIMARY KEY, ClassID INTEGER REFERENCES Classes, TopicID INTEGER REFERENCES Topics, Title VARCHAR(50), Description TEXT, Username VARCHAR(50) REFERENCES Users, DateCreated DATE, TotalVote INTEGER, ActivityTag VARCHAR(50));
+
+INSERT INTO Permission VALUES (1, 'Student', 'create,save,edit,reply');
+INSERT INTO Permission VALUES (1, 'Professor', 'create,save,delete,reply,edit');
+INSERT INTO Permission VALUES (2, 'TA', 'create,save,edit,reply');
